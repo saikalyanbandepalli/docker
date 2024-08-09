@@ -1,0 +1,29 @@
+name: Spring demo GHA
+
+on:
+  push:
+    branches:
+      - master
+    pull_request:
+      - master
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+
+    steps:
+      - name: checkout code
+        uses: actions/checkout
+
+      -  name: Setup JDK
+         uses: actions/setup-java@v3
+         with:
+           java-version: '21'
+
+      -   name: Build
+          run: mun clean install
+
+      -   name: Test
+
