@@ -32,7 +32,7 @@ jobs:
 
       - name: Upload jar to Github
         if: ${{success()}}
-        uses: action/upload-artifact@v3
+        uses: actions/upload-artifact@v3
         with:
           name: myapp-jar
           path: target/*.jar
